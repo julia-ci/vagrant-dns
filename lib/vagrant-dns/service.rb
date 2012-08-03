@@ -1,3 +1,4 @@
+require 'daemons'
 module VagrantDNS
   class Service
     attr_accessor :tmp_path, :options
@@ -18,7 +19,7 @@ module VagrantDNS
     end
 
     def run!(run_options)
-      Daemons.run_proc("vagrant-dns", run_options) do
+      ::Daemons.run_proc("vagrant-dns", run_options) do
         require 'resolv'
         require 'rubydns'
 

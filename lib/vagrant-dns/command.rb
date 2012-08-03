@@ -4,7 +4,7 @@ require 'rbconfig'
 
 module VagrantDNS
 
-  class Command < Vagrant::Command::Base
+  class Command < Vagrant::Plugin::V1::Command
 
     # Runs the vbguest installer on the VMs that are represented
     # by this environment.

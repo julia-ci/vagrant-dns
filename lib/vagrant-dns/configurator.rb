@@ -6,6 +6,7 @@ module VagrantDNS
     attr_accessor :vm, :tmp_path
 
     def initialize(vm, tmp_path)
+      puts tmp_path
       @vm = vm
       @tmp_path = tmp_path
     end

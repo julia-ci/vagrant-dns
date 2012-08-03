@@ -1,7 +1,7 @@
 require 'logger'
 
 module VagrantDNS
-  class Config < Vagrant::Config::Base
+  class Config < Vagrant::Plugin::V1::Config
     class << self
       attr_accessor :listen, :logger, :ipv4only, :auto_run
 
@@ -19,7 +19,7 @@ module VagrantDNS
       end
     end
 
-    attr_accessor :records, :tlds, :ipv4only, :patterns
+    attr_accessor :records, :tlds, :ipv4only, :patterns, :fqdn
 
     def pattern=(pattern)
       self.patterns = pattern
